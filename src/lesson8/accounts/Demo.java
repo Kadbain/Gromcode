@@ -1,4 +1,4 @@
-package lesson8;
+package lesson8.accounts;
 
 /**
  * Created by Ps1X on 21.09.2017.
