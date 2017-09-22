@@ -1,6 +1,5 @@
 package lesson9.employee;
 
-import lesson9.employee.Company;
 import lesson9.employee.utils.Checker;
 
 /**
