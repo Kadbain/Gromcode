@@ -3,17 +3,12 @@ package lesson9.dz;
 /**
  * Created by Ps1X on 22.09.2017.
  */
-public class UserRepository extends User{
+public class UserRepository{
     private User[] users;
 //this.users = new User[]{new User(user.getId(), user.getName(), user.getSessionId())};
 
-    public UserRepository(long id, String name, String sessionId, User[] users) {
-        super(id, name, sessionId);
+    public UserRepository(User[] users) {
         this.users = users;
-    }
-
-    public UserRepository(long id, String name, String sessionId) {
-        super(id, name, sessionId);
     }
 
     public User[] getUsers() {
