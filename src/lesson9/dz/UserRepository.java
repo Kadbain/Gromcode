@@ -14,7 +14,7 @@ public class UserRepository{
         return users;
     }
 
-    public String [] getUserNames(User user) {
+    public String [] getUserNames() {
         String [] names = new String[]{};
         for (int i = 0; i < users.length; i++) {
             names[i] = users[i].getName();
