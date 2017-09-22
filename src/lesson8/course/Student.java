@@ -15,6 +15,7 @@ public class Student {
         this.coursesTaken = coursesTaken;
     }
 
+
     public Student() {
     }
 }
