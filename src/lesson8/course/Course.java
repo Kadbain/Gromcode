@@ -2,9 +2,7 @@ package lesson8.course;
 
 import java.util.Date;
 
-/**
- * Created by Ps1X on 22.09.2017.
- */
+
 public class Course {
     Date startDate;
     String name;

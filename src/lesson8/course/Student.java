@@ -1,8 +1,6 @@
 package lesson8.course;
 
-/**
- * Created by Ps1X on 22.09.2017.
- */
+
 public class Student {
     String firstName;
     String lastName;
