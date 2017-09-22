@@ -7,7 +7,8 @@ public class UserRepository{
     private User[] users;
 //this.users = new User[]{new User(user.getId(), user.getName(), user.getSessionId())};
 
-    public UserRepository(User[] users) {
+    public UserRepository(User[] users, User user) {
+        users = new User[]{new User(user.getId(), user.getName(), user.getSessionId())};
         this.users = users;
     }
 
