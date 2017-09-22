@@ -13,8 +13,8 @@ public class Demo {
                               new Student("Vanya", "Putin", 2, new Course[]{})});
         return course;
     }
-    public CollegeStudent createLowestChild() {
-        CollegeStudent specialStudent= new SpecialStudent("XAI", 25, 12315521, 909, "ps1x0209@gmail.com");
+    public SpecialStudent createLowestChild() {
+        SpecialStudent specialStudent= new SpecialStudent("Jenya", "Utkin", 2, new Course[]{}, 909,"ps1x0209@gmail.com");
         return specialStudent;
     }
 }
