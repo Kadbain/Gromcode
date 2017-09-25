@@ -18,7 +18,6 @@ public class UserRepository{
 
     public String [] getUserNames() {
         String [] names = new String[getUsers().length];
-
             for (int i = 0; i < getUsers().length; i++) {
                 if (getUsers()[i] != null ) {
                 names[i] = getUsers()[i].getName();
@@ -28,33 +27,23 @@ public class UserRepository{
     }
     public long [] getUserIds() {
         long [] ids = new long[getUsers().length];
+        if (getUsers() != null) {
         for (int i = 0; i < getUsers().length; i++) {
-            if (getUsers()[i] != null) {
+//            if (getUsers()[i].getId() != 0)
                 ids[i] = getUsers()[i].getId();
             }
         }
         return ids;
     }
-//    public String getUserNameById(long id) {
-//        for (int i = 0; i < getUsers().length; i++) {
-//            if (getUsers()[i] != null ) {
-//                if (id == getUsers()[i].getId()) {
-//                    return getUsers()[i].getName();
-//                }
-//            }
-//        }
-//        return "don't finded user";
-//    }
     public String getUserNameById(long id) {
         String name = null;
-        if (getUsers()!=null){
+        if (getUsers() != null){
             for (int i=0; i<getUsers().length;i++){
-                if (getUsers()[i]!=null&&getUsers()[i].getId()==id){
+                if (getUsers()[i] != null && getUsers()[i].getId() == id){
                     name = getUsers()[i].getName();
                 }
             }
         }
-
         return name;
     }
 }
