@@ -31,14 +31,18 @@ public class UserRepository{
     public long [] getUserIds() {
         long [] ids = new long[getUsers().length];
         for (int i = 0; i < getUsers().length; i++) {
-            ids[i] = getUsers()[i].getId();
+            if (getUsers()[i] != null) {
+                ids[i] = getUsers()[i].getId();
+            }
         }
         return ids;
     }
     public String getUserNameById(long id) {
         for (int i = 0; i < getUsers().length; i++) {
-            if (id == getUsers()[i].getId()) {
-                return getUsers()[i].getName();
+            if (getUsers()[i] != null ) {
+                if (id == getUsers()[i].getId()) {
+                    return getUsers()[i].getName();
+                }
             }
         }
         return "don't finded user";
