@@ -56,10 +56,13 @@ public class UserRepository{
     }
     public User getUserByName(String name) {
         if (name != null) {
-            for (int i = 0; i < users.length; i++) {
-                if (getUsers()[i] != null && getUsers()[i].getName().equals(name)) {
-                 return getUsers()[i];
-                }
+            for (int i = 0; i < getUsers().length; i++) {
+                if (getUsers()[i] != null) {
+                    if (getUsers()[i].getName().equals(name)) {
+                        return getUsers()[i];
+                    }
+                } else
+                    return null;
             }
         }
         return null;
