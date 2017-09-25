@@ -70,7 +70,7 @@ public class UserRepository {
 //        return null;
 //    }
 
-            if (name != null) {
+            if (name != null && getUsers() != null) {
             int count = 0;
             for (int i = 0; i < getUsers().length; i++) {
                 if (getUsers()[i] != null) {
@@ -81,6 +81,7 @@ public class UserRepository {
                         }
                     }
                 }
+                return null;
             }
         }
         return null;
