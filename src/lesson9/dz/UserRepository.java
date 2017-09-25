@@ -55,25 +55,43 @@ public class UserRepository{
         return name;
     }
     public User getUserByName(String name) {
-        if (getUsers() != null){
-        if (name != null) {
-            int count = 0;
-            for (int i = 0; i < getUsers().length; i++) {
-                    if (getUsers()[i].getName().equals(name)) {
-                        count++;
-                        if (count == 1) {
-                            return getUsers()[i];
-                        }
+        if (getUsers() != null) {
+            for (User user : getUsers()) {
+                if (user != null && user.equals(name)) {
+//                    if (user.equals(name)) {
+                        return user;
                     }
                 }
             }
-        }
+//        }
         return null;
     }
+//        if (name != null) {
+//            int count = 0;
+//            for (int i = 0; i < getUsers().length; i++) {
+//                if (getUsers()[i] != null) {
+//                    if (getUsers()[i].getName().equals(name)) {
+//                        count++;
+//                        if (count == 1) {
+//                            return getUsers()[i];
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        return null;
+//    }
     public User getUserById(long id) {
         if (getUsers() != null) {
             int result = 0;
-
+            for (User user : getUsers()) {
+                if (user != null) {
+                    result++;
+                }
+            }
+            long [] ids = new long[result];
+            int count = 0;
+            
         }
         return null;
     }
