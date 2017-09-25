@@ -25,14 +25,33 @@ public class UserRepository{
         }
         return names;
     }
+//    public long [] getUserIds() {
+//        long[] ids = new long[getUsers().length];
+//            for (int i = 0; i < getUsers().length; i++) {
+//                if (getUsers()[i] != null)
+//                    ids[i] = getUsers()[i].getId();
+//            }
+//
+//        return ids;
+//    }
     public long [] getUserIds() {
-        long[] ids = new long[getUsers().length];
-            for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i] != null)
-                    ids[i] = getUsers()[i].getId();
+        if (getUsers()!=null){
+            int a = 0;
+            for (User user: getUsers()) {
+                if (user!=null)a++;
             }
 
-        return ids;
+            long [] ids = new long [a];
+            int i=0;
+            for (User user: getUsers()) {
+                if (user != null) {
+                    ids[i] = user.getId();
+                    i++;
+                }
+            }
+            return ids;
+        }
+        return null;
     }
     public String getUserNameById(long id) {
         String name = null;
