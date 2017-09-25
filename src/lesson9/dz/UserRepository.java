@@ -3,7 +3,7 @@ package lesson9.dz;
 /**
  * Created by Ps1X on 22.09.2017.
  */
-public class UserRepository{
+public class UserRepository {
     private User[] users;
 
     public UserRepository(User[] users) {
@@ -16,24 +16,25 @@ public class UserRepository{
         return users;
     }
 
-    public String [] getUserNames() {
-        String [] names = new String[getUsers().length];
-            for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i] != null ) {
+    public String[] getUserNames() {
+        String[] names = new String[getUsers().length];
+        for (int i = 0; i < getUsers().length; i++) {
+            if (getUsers()[i] != null) {
                 names[i] = getUsers()[i].getName();
             }
         }
         return names;
     }
-    public long [] getUserIds() {
-        if (getUsers()!=null){
+
+    public long[] getUserIds() {
+        if (getUsers() != null) {
             int a = 0;
-            for (User user: getUsers()) {
-                if (user!=null)a++;
+            for (User user : getUsers()) {
+                if (user != null) a++;
             }
-            long [] ids = new long [a];
-            int i=0;
-            for (User user: getUsers()) {
+            long[] ids = new long[a];
+            int i = 0;
+            for (User user : getUsers()) {
                 if (user != null) {
                     ids[i] = user.getId();
                     i++;
@@ -43,30 +44,35 @@ public class UserRepository{
         }
         return null;
     }
+
     public String getUserNameById(long id) {
         String name = null;
-        if (getUsers() != null){
-            for (int i=0; i<getUsers().length;i++){
-                if (getUsers()[i] != null && getUsers()[i].getId() == id){
+        if (getUsers() != null) {
+            for (int i = 0; i < getUsers().length; i++) {
+                if (getUsers()[i] != null && getUsers()[i].getId() == id) {
                     name = getUsers()[i].getName();
                 }
             }
         }
         return name;
     }
+
     public User getUserByName(String name) {
         if (getUsers() != null) {
-            for (User user : getUsers()) {
-                if (user != null && user.equals(name)) {
-//                    if (user.equals(name)) {
-                        return user;
+            if (name != null) {
+                for (User user : getUsers()) {
+                    if (user != null) {
+                        if (user.equals(name)) {
+                            return user;
+                        }
                     }
                 }
             }
-//        }
+        }
         return null;
     }
-//        if (name != null) {
+
+    //        if (name != null) {
 //            int count = 0;
 //            for (int i = 0; i < getUsers().length; i++) {
 //                if (getUsers()[i] != null) {
@@ -89,13 +95,14 @@ public class UserRepository{
                     result++;
                 }
             }
-            long [] ids = new long[result];
+            long[] ids = new long[result];
             int count = 0;
-            
+
         }
         return null;
     }
+
     public User getUserBySessionId(String sessionId) {
-    return null;
+        return null;
     }
 }
