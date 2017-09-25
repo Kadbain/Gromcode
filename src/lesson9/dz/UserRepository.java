@@ -55,10 +55,10 @@ public class UserRepository{
         return name;
     }
     public User getUserByName(String name) {
+        if (getUsers() != null){
         if (name != null) {
             int count = 0;
             for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i] != null) {
                     if (getUsers()[i].getName().equals(name)) {
                         count++;
                         if (count == 1) {
@@ -71,7 +71,11 @@ public class UserRepository{
         return null;
     }
     public User getUserById(long id) {
-    return null;
+        if (getUsers() != null) {
+            int result = 0;
+
+        }
+        return null;
     }
     public User getUserBySessionId(String sessionId) {
     return null;
