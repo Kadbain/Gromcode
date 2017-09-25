@@ -25,22 +25,12 @@ public class UserRepository{
         }
         return names;
     }
-//    public long [] getUserIds() {
-//        long[] ids = new long[getUsers().length];
-//            for (int i = 0; i < getUsers().length; i++) {
-//                if (getUsers()[i] != null)
-//                    ids[i] = getUsers()[i].getId();
-//            }
-//
-//        return ids;
-//    }
     public long [] getUserIds() {
         if (getUsers()!=null){
             int a = 0;
             for (User user: getUsers()) {
                 if (user!=null)a++;
             }
-
             long [] ids = new long [a];
             int i=0;
             for (User user: getUsers()) {
@@ -63,5 +53,21 @@ public class UserRepository{
             }
         }
         return name;
+    }
+    public User getUserByName(String name) {
+        if (name != null) {
+            for (int i = 0; i < users.length; i++) {
+                if (getUsers()[i] != null && getUsers()[i].getName().equals(name)) {
+                 return getUsers()[i];
+                }
+            }
+        }
+        return null;
+    }
+    public User getUserById(long id) {
+    return null;
+    }
+    public User getUserBySessionId(String sessionId) {
+    return null;
     }
 }
