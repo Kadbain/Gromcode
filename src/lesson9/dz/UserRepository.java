@@ -10,6 +10,7 @@ public class UserRepository{
 
     public UserRepository(User[] users) {
         this.users = users;
+
     }
 
     public User[] getUsers() {
@@ -19,8 +20,10 @@ public class UserRepository{
 
     public String [] getUserNames() {
         String [] names = new String[getUsers().length];
-        for (int i = 0; i < getUsers().length; i++) {
-            names[i] = getUsers()[i].getName();
+        if (getUsers() != null ) {
+            for (int i = 0; i < getUsers().length; i++) {
+                names[i] = getUsers()[i].getName();
+            }
         }
         return names;
     }
