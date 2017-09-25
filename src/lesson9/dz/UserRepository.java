@@ -29,7 +29,7 @@ public class UserRepository{
         long [] ids = new long[getUsers().length];
         if (getUsers() != null) {
         for (int i = 0; i < getUsers().length; i++) {
-            if (getUsers()[i].getId() != 0)
+            if (getUsers()[i] != null)
                 ids[i] = getUsers()[i].getId();
             }
         }
