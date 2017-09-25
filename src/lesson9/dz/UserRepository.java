@@ -61,8 +61,7 @@ public class UserRepository{
                     if (getUsers()[i].getName().equals(name)) {
                         return getUsers()[i];
                     }
-                } else
-                    return null;
+                }
             }
         }
         return null;
