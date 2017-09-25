@@ -5,8 +5,6 @@ package lesson9.dz;
  */
 public class UserRepository{
     private User[] users;
-//this.users = new User[]{new User(user.getId(), user.getName(), user.getSessionId())};
-
 
     public UserRepository(User[] users) {
         this.users = users;
@@ -37,14 +35,26 @@ public class UserRepository{
         }
         return ids;
     }
+//    public String getUserNameById(long id) {
+//        for (int i = 0; i < getUsers().length; i++) {
+//            if (getUsers()[i] != null ) {
+//                if (id == getUsers()[i].getId()) {
+//                    return getUsers()[i].getName();
+//                }
+//            }
+//        }
+//        return "don't finded user";
+//    }
     public String getUserNameById(long id) {
-        for (int i = 0; i < getUsers().length; i++) {
-            if (getUsers()[i] != null ) {
-                if (id == getUsers()[i].getId()) {
-                    return getUsers()[i].getName();
+        String name = null;
+        if (getUsers()!=null){
+            for (int i=0; i<getUsers().length;i++){
+                if (getUsers()[i]!=null&&getUsers()[i].getId()==id){
+                    name = getUsers()[i].getName();
                 }
             }
         }
-        return "don't finded user";
+
+        return name;
     }
 }
