@@ -26,13 +26,12 @@ public class UserRepository{
         return names;
     }
     public long [] getUserIds() {
-        long [] ids = new long[getUsers().length];
-        if (getUsers() != null) {
-        for (int i = 0; i < getUsers().length; i++) {
-            if (getUsers()[i] != null)
-                ids[i] = getUsers()[i].getId();
+        long[] ids = new long[getUsers().length];
+            for (int i = 0; i < getUsers().length; i++) {
+                if (getUsers()[i] != null)
+                    ids[i] = getUsers()[i].getId();
             }
-        }
+
         return ids;
     }
     public String getUserNameById(long id) {
