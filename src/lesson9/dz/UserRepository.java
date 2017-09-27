@@ -72,7 +72,7 @@ public class UserRepository {
 
             if (name != null && getUsers() != null) {
             for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i].getName() != null) {
+                if (getUsers()[i] != null) {
                     if (getUsers()[i].getName().equals(name)) {
                             return getUsers()[i];
                         }
