@@ -86,7 +86,7 @@ public class UserRepository {
         if (getUsers() != null) {
             for (User user : getUsers()) {
                 if (user != null) {
-                    if (user.getName().equals(sessionId)) {
+                    if (user.getSessionId().equals(sessionId)) {
                         return user;
                     }
                 }
