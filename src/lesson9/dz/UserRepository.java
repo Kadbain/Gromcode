@@ -83,6 +83,6 @@ public class UserRepository {
     }
 
     public User getUserBySessionId(String sessionId) {
-        return null;
+        return getUserByName(sessionId);
     }
 }
