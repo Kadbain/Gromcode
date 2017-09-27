@@ -69,7 +69,7 @@ public class UserRepository {
             }
         return null;
     }
-    public User getUserById(long id) {
+    private User findById(long id) {
         if (getUsers() != null) {
             for (User user : getUsers()) {
                 if (user != null) {
@@ -89,6 +89,17 @@ public class UserRepository {
                     if (user.getSessionId().equals(sessionId)) {
                         return user;
                     }
+                }
+            }
+        }
+        return null;
+    }
+    public User save(User user) {
+        if (findById(user.getId()) == null) {
+        for (int i = 0; i < getUsers().length; i++) {
+                if (getUsers()[i] == null ) {
+                    getUsers()[i] = user;
+                    return getUsers()[i];
                 }
             }
         }
