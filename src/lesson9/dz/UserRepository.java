@@ -58,7 +58,7 @@ public class UserRepository {
     }
 
     public User getUserByName(String name) {
-        if (name != null && getUsers() != null) {
+        if (getUsers() != null) {
                 for (User user : getUsers()) {
                     if (null != user) {
                         if (user.getName().equals(name)) {
