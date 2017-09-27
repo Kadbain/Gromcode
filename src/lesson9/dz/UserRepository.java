@@ -133,14 +133,20 @@ public class UserRepository {
 //    }
 
     public void delete(long id) {
-        int index = 0;
+//        int index = 0;
         User user = findById(id);
-        for (User user1 : getUsers()) {
-            if (user1 == user) {
-                getUsers()[index] = null;
+        for (int i = 0; i < getUsers().length; i++) {
+            if (getUsers()[i] == user) {
+                getUsers()[i] = null;
                 break;
             }
-            index++;
         }
+//        for (User user1 : getUsers()) {
+//            if (user1 == user) {
+//                getUsers()[index] = null;
+//                break;
+//            }
+//            index++;
+//        }
     }
 }
