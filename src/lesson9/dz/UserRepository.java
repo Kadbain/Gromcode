@@ -59,17 +59,18 @@ public class UserRepository {
 
     public User getUserByName(String name) {
         if (getUsers() != null) {
-                for (User user : getUsers()) {
-                    if (user != null) {
-                        if (user.getName().equals(name)) {
-                            return user;
-                        }
+            for (User user : getUsers()) {
+                if (user != null) {
+                    if (user.getName().equals(name)) {
+                        return user;
                     }
                 }
             }
+        }
         return null;
     }
-    private User findById(long id) {
+
+    public User findById(long id) {
         if (getUsers() != null) {
             for (User user : getUsers()) {
                 if (user != null) {
@@ -94,10 +95,11 @@ public class UserRepository {
         }
         return null;
     }
+
     public User save(User user) {
         if (findById(user.getId()) == null) {
-        for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i] == null ) {
+            for (int i = 0; i < getUsers().length; i++) {
+                if (getUsers()[i] == null) {
                     getUsers()[i] = user;
                     return getUsers()[i];
                 }
@@ -105,6 +107,7 @@ public class UserRepository {
         }
         return null;
     }
+
     public User update(User user) {
         if (findById(user.getId()) != null) {
             for (int i = 0; i < getUsers().length; i++) {
