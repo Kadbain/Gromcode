@@ -64,34 +64,20 @@ public class UserRepository {
                         if (user.getName().equals(name)) {
                             return user;
                         }
-                    } else return null;
+                    }
                 }
             }
         return null;
     }
-
-//            if (name != null && getUsers() != null) {
-//            for (int i = 0; i < getUsers().length; i++) {
-//                if (getUsers()[i] != null) {
-//                    if (getUsers()[i].getName().equals(name)) {
-//                            return getUsers()[i];
-//                        }
-//                    }
-//                }
-//            }
-//        return null;
-//    }
     public User getUserById(long id) {
         if (getUsers() != null) {
-            int result = 0;
             for (User user : getUsers()) {
                 if (user != null) {
-                    result++;
+                    if (user.getId() == id) {
+                        return user;
+                    }
                 }
             }
-            long[] ids = new long[result];
-            int count = 0;
-
         }
         return null;
     }
