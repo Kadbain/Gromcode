@@ -83,6 +83,15 @@ public class UserRepository {
     }
 
     public User getUserBySessionId(String sessionId) {
-        return getUserByName(sessionId);
+        if (getUsers() != null) {
+            for (User user : getUsers()) {
+                if (user != null) {
+                    if (user.getName().equals(sessionId)) {
+                        return user;
+                    }
+                }
+            }
+        }
+        return null;
     }
 }
