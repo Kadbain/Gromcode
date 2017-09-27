@@ -108,7 +108,7 @@ public class UserRepository {
     public User update(User user) {
         if (findById(user.getId()) != null) {
             for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i] == user) {
+                if (getUsers()[i].getId() == user.getId()) {
                     getUsers()[i] = user;
                     return getUsers()[i];
                 }
