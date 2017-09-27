@@ -71,19 +71,14 @@ public class UserRepository {
 //    }
 
             if (name != null && getUsers() != null) {
-            int count = 0;
             for (int i = 0; i < getUsers().length; i++) {
-                if (getUsers()[i] != null) {
-                    if (getUsers()[i].getName().equals(name) && getUsers()[i].getName() != null) {
-                        count++;
-                        if (count == 1) {
+                if (getUsers()[i].getName() != null) {
+                    if (getUsers()[i].getName().equals(name)) {
                             return getUsers()[i];
                         }
                     }
                 }
-                return null;
             }
-        }
         return null;
     }
     public User getUserById(long id) {
