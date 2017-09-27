@@ -105,4 +105,24 @@ public class UserRepository {
         }
         return null;
     }
+    public User update(User user) {
+        if (findById(user.getId()) != null) {
+            for (int i = 0; i < getUsers().length; i++) {
+                if (getUsers()[i] == user) {
+                    getUsers()[i] = user;
+                    return getUsers()[i];
+                }
+            }
+        }
+        return null;
+    }
+    public void delete(long id) {
+    if (findById(id) != null) {
+        for (int i = 0; i < getUsers().length; i++) {
+            if (getUsers()[i].getId() == id) {
+                getUsers()[i] = null;
+            }
+        }
+    }
+    }
 }
