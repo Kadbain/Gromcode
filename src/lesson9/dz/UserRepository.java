@@ -60,7 +60,7 @@ public class UserRepository {
     public User getUserByName(String name) {
         if (name != null && getUsers() != null) {
                 for (User user : getUsers()) {
-                    if (user != null) {
+                    if (null != user) {
                         if (user.getName().equals(name)) {
                             return user;
                         }
